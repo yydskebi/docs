@@ -58,7 +58,7 @@ https://github.com/yunionio/service-images 仓库包含了一些我们使用 pac
     $ reboot
     ```
 
-3. 将必要的kernel module加入启动initram.img。
+3. 将必要的kernel module加入启动initram.img。（centos8因为virtio已经编译到cent8内核了，把virtio从列表里去掉）
 
     ```bash
     $ vi /etc/dracut.conf
@@ -88,7 +88,7 @@ https://github.com/yunionio/service-images 仓库包含了一些我们使用 pac
     $ yum install net-tools git wget vim pcre-tools ntp epel-release -y
     ```
 
-6. 禁用firewalld和NetworkManager服务。
+6. 禁用firewalld和NetworkManager服务。（centos8 centos9无需禁用NetworkManager）
 
     ```bash
     $ systemctl disable firewalld NetworkManager
