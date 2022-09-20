@@ -72,7 +72,6 @@ https://github.com/yunionio/service-images 仓库包含了一些我们使用 pac
     ```
 
 4. 关闭网卡持久化功能，保证CentOS 7中网卡名称为“eth0，eth1”形式。修改/etc/default/grub文件，在GRUB_CMDLINE_LINUX中添加"net.ifnames=0 biosdevname=0"参数。
-
     ```bash
     $ vi /etc/default/grub
     # 修改配置文件，修改完成后保存。
@@ -88,7 +87,7 @@ https://github.com/yunionio/service-images 仓库包含了一些我们使用 pac
     $ yum install net-tools git wget vim pcre-tools ntp epel-release -y
     ```
 
-6. 禁用firewalld和NetworkManager服务。
+6. 禁用firewalld和NetworkManager服务。（centos9不禁用NetworkManager）
 
     ```bash
     $ systemctl disable firewalld NetworkManager
